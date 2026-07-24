@@ -46,6 +46,7 @@ The service uses OneDev's documented PostgreSQL settings:
 
 | Variable | Purpose |
 | --- | --- |
+| `PORT` | Railway routing target for OneDev HTTP on `6610`. |
 | `hibernate_dialect` | OneDev PostgreSQL dialect. |
 | `hibernate_connection_driver_class` | PostgreSQL JDBC driver. |
 | `hibernate_connection_url` | Private Railway PostgreSQL JDBC URL. |

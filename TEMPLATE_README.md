@@ -32,7 +32,7 @@ The template does not configure a local CI executor. Railway does not provide th
 
 ### Implementation Details
 
-OneDev uses its supported PostgreSQL dialect and JDBC configuration over Railway's private network. The official application image is pinned rather than following a mutable tag. First-run initialization creates the administrator and canonical HTTPS server URL. No Docker socket is mounted and no job executor is configured. The Railway health check targets the web root after database migration and application startup.
+OneDev publishes its fixed HTTP port `6610` through Railway's `PORT` routing variable and uses its supported PostgreSQL dialect and JDBC configuration over Railway's private network. The official application image is pinned rather than following a mutable tag. First-run initialization creates the administrator and canonical HTTPS server URL. No Docker socket is mounted and no job executor is configured. The Railway health check targets the web root after database migration and application startup.
 
 ### Why Deploy OneDev on Railway?
 
