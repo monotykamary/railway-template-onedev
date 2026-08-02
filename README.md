@@ -6,7 +6,7 @@ A core OneDev deployment for Railway with managed PostgreSQL and persistent appl
 
 ## Architecture
 
-- **OneDev 16.3.0** from the pinned official image
+- **OneDev 16.3.4** from the pinned official image
 - **PostgreSQL** for relational application data
 - **Persistent volume at `/opt/onedev`** for repositories, attachments, artifacts, and server state
 - **HTTPS** through a Railway public domain targeting port `6610`
