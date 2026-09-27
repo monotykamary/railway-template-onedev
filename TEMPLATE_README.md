@@ -18,7 +18,7 @@ The template does not configure a local CI executor. Railway does not provide th
 
 ## Dependencies for OneDev Hosting
 
-- OneDev 16.6.4
+- OneDev 16.7.3
 - PostgreSQL
 - Persistent storage mounted at `/opt/onedev`
 - Railway HTTPS networking on port `6610`
