@@ -8,6 +8,10 @@ Hosting OneDev requires preserving both its relational database and its applicat
 
 The template does not configure a local CI executor. Railway does not provide the Docker socket or privileged nested-container support required by OneDev's Docker executors. Builds remain unassigned until a compatible external agent or shell executor is configured.
 
+## Upgrade compatibility
+
+Back up PostgreSQL and the complete `/opt/onedev` volume together before upgrading; reverting the image alone does not undo data migrations. From OneDev 17.0.2, webhook receivers must verify `X-OneDev-Signature` as HMAC-SHA256 of the raw request body, rather than comparing it with the shared secret. Update receivers before upgrading. PostgreSQL stays on the existing major version. See the [upstream incompatibilities](https://github.com/theonedev/onedev/blob/v17.2.0/server-product/system/incompatibilities/incompatibilities.md).
+
 ## Common Use Cases
 
 - Host private Git repositories and review pull requests
