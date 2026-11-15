@@ -6,7 +6,7 @@ A core OneDev deployment for Railway with managed PostgreSQL and persistent appl
 
 ## Architecture
 
-- **OneDev 16.9.7** from the pinned official image
+- **OneDev 17.2.0** from the pinned official image
 - **PostgreSQL** for relational application data
 - **Persistent volume at `/opt/onedev`** for repositories, attachments, artifacts, and server state
 - **HTTPS** through a Railway public domain targeting port `6610`
@@ -62,6 +62,10 @@ The `initial_*` variables only affect an empty installation.
 ## Backups and upgrades
 
 Back up both PostgreSQL and `/opt/onedev`. Test restores before relying on a backup policy. The Docker image is intentionally pinned; upgrade it through a reviewed repository change after checking OneDev's release notes and backup guidance.
+
+## Upgrade compatibility
+
+The official container upgrade procedure recreates the server on its existing database and `/opt/onedev` volume; the server performs migrations on startup. Back up both first. From 17.0.2, webhook receivers must verify `X-OneDev-Signature` as HMAC-SHA256 of the raw body rather than comparing it to the shared secret. Update receivers before upgrading. See [upstream incompatibilities](https://github.com/theonedev/onedev/blob/v17.2.0/server-product/system/incompatibilities/incompatibilities.md). PostgreSQL remains on the existing major version.
 
 ## License
 
